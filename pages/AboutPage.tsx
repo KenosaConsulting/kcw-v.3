@@ -64,7 +64,7 @@ const AboutPage: React.FC = () => {
             <div className="space-y-5">
               <p className="text-lg text-[rgb(107,114,128)] leading-relaxed">
                 Nathan Kalosa-Kenyon is the founder of Kenosa Consulting, where he helps small businesses, 
-                Tribal enterprises, and federal contractors build explainable, durable growth systems. 
+                Native-owned enterprises, and federal contractors build explainable, durable growth systems. 
                 His work bridges market intelligence, operating discipline, and specialized research to 
                 create strategies that not only look good on paper but deliver measurable results.
               </p>
@@ -87,7 +87,7 @@ const AboutPage: React.FC = () => {
               Nathan combines startup leadership with purpose-driven consulting to turn strategy into execution 
               through data-governed systems. He has led engagements ranging from enterprise operating systems 
               for fast-growing 8(a) contractors to behavioral research that unlocked billions in small-business 
-              recovery, and product design for Tribal platforms accelerating procurement and capital access. 
+              recovery, and product design for Native-owned platforms accelerating procurement and capital access. 
               His teams have delivered hundreds of strategy artifacts, competitive dossiers, and enablement 
               kits that reduce reliance on intuition and enable confident action. The work spans navigating 
               agency procurement, designing SOPs, transforming revenue pipelines, and operationalizing 
