@@ -64,7 +64,7 @@ const AboutPage: React.FC = () => {
             <div className="space-y-5">
               <p className="text-lg text-[rgb(107,114,128)] leading-relaxed">
                 Nathan Kalosa-Kenyon is the founder of Kenosa Consulting, where he helps small businesses, 
-                Native-owned enterprises, and federal contractors build explainable, durable growth systems. 
+                Native-owned enterprises, startups, and federal contractors build explainable, durable growth systems. 
                 His work bridges market intelligence, operating discipline, and specialized research to 
                 create strategies that not only look good on paper but deliver measurable results.
               </p>
