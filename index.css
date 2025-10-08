@@ -1,0 +1,715 @@
+/* ============================================
+   EXECUTIVE CONFIDENCE - Premium Enterprise Design System
+   ============================================ */
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Import premium fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ============================================
+   ROOT VARIABLES - Executive Palette
+   ============================================ */
+:root {
+  --executive-navy: 10, 22, 40;           /* #0A1628 */
+  --trust-blue: 30, 58, 95;               /* #1E3A5F */
+  --rich-gold: 212, 175, 55;              /* #D4AF37 */
+  --muted-gold: 184, 148, 28;             /* #B8941C */
+  --pearl-white: 250, 250, 249;           /* #FAFAF9 */
+  --warm-gray: 107, 114, 128;             /* #6B7280 */
+  --slate-dark: 31, 41, 55;               /* #1F2937 */
+  --subtle-cream: 247, 246, 243;          /* #F7F6F3 */
+}
+
+/* ============================================
+   BASE TYPOGRAPHY - Refined & Professional
+   ============================================ */
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: rgb(var(--slate-dark));
+  background-color: rgb(var(--pearl-white));
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  color: rgb(var(--executive-navy));
+  letter-spacing: -0.02em;
+}
+
+h4, h5, h6 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  color: rgb(var(--executive-navy));
+  letter-spacing: -0.015em;
+}
+
+/* ============================================
+   SOPHISTICATED BACKGROUNDS
+   ============================================ */
+
+.executive-gradient {
+  background: linear-gradient(
+    135deg,
+    rgb(var(--pearl-white)) 0%,
+    rgb(var(--subtle-cream)) 50%,
+    rgba(var(--trust-blue), 0.03) 100%
+  );
+}
+
+.premium-gradient {
+  background: linear-gradient(
+    180deg,
+    rgb(var(--executive-navy)) 0%,
+    rgb(var(--trust-blue)) 100%
+  );
+}
+
+.subtle-paper-texture {
+  background-color: rgb(var(--pearl-white));
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 100px,
+      rgba(var(--executive-navy), 0.01) 100px,
+      rgba(var(--executive-navy), 0.01) 101px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 100px,
+      rgba(var(--executive-navy), 0.01) 100px,
+      rgba(var(--executive-navy), 0.01) 101px
+    );
+}
+
+/* ============================================
+   PREMIUM GLASS EFFECTS
+   ============================================ */
+
+.executive-glass {
+  background: rgba(var(--pearl-white), 0.85);
+  backdrop-filter: blur(12px) saturate(110%);
+  -webkit-backdrop-filter: blur(12px) saturate(110%);
+  border: 1px solid rgba(var(--executive-navy), 0.08);
+  box-shadow: 
+    0 8px 32px rgba(var(--executive-navy), 0.06),
+    0 1px 2px rgba(var(--executive-navy), 0.08);
+}
+
+.executive-glass-dark {
+  background: rgba(var(--executive-navy), 0.92);
+  backdrop-filter: blur(16px) saturate(120%);
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  border: 1px solid rgba(var(--rich-gold), 0.1);
+  box-shadow: 
+    0 20px 40px rgba(var(--executive-navy), 0.3),
+    inset 0 1px 0 rgba(var(--pearl-white), 0.03);
+}
+
+/* Navigation Bar - Premium & Clean */
+.executive-nav {
+  background: rgba(var(--pearl-white), 0.95);
+  backdrop-filter: blur(10px) saturate(100%);
+  -webkit-backdrop-filter: blur(10px) saturate(100%);
+  border-bottom: 1px solid rgba(var(--executive-navy), 0.05);
+  transition: all 0.3s ease;
+}
+
+.executive-nav.scrolled {
+  background: rgba(var(--pearl-white), 0.98);
+  box-shadow: 0 1px 3px rgba(var(--executive-navy), 0.08);
+}
+
+/* ============================================
+   PROFESSIONAL BUTTONS
+   ============================================ */
+
+.executive-button-primary {
+  background: rgb(var(--executive-navy));
+  color: rgb(var(--pearl-white));
+  border: 1px solid rgb(var(--executive-navy));
+  padding: 0.875rem 2rem;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.executive-button-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--rich-gold), 0.1),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.executive-button-primary:hover {
+  background: rgb(var(--trust-blue));
+  transform: translateY(-1px);
+  box-shadow: 
+    0 4px 12px rgba(var(--executive-navy), 0.15),
+    0 1px 3px rgba(var(--executive-navy), 0.1);
+}
+
+.executive-button-primary:hover::before {
+  left: 100%;
+}
+
+.executive-button-gold {
+  background: linear-gradient(
+    135deg,
+    rgb(var(--rich-gold)),
+    rgb(var(--muted-gold))
+  );
+  color: rgb(var(--executive-navy));
+  border: 1px solid rgb(var(--rich-gold));
+  padding: 0.875rem 2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  transition: all 0.25s ease;
+}
+
+.executive-button-gold:hover {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 6px 20px rgba(var(--rich-gold), 0.25),
+    0 2px 8px rgba(var(--rich-gold), 0.15);
+  filter: brightness(1.05);
+}
+
+.executive-button-outline {
+  background: transparent;
+  color: rgb(var(--executive-navy));
+  border: 2px solid rgb(var(--executive-navy));
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  transition: all 0.25s ease;
+}
+
+.executive-button-outline:hover {
+  background: rgba(var(--executive-navy), 0.05);
+  transform: translateY(-1px);
+}
+
+/* ============================================
+   PREMIUM CARDS
+   ============================================ */
+
+.executive-card {
+  background: rgb(var(--pearl-white));
+  border: 1px solid rgba(var(--executive-navy), 0.08);
+  border-radius: 6px;
+  box-shadow: 
+    0 1px 3px rgba(var(--executive-navy), 0.08),
+    0 1px 2px rgba(var(--executive-navy), 0.06);
+  transition: all 0.3s ease;
+}
+
+.executive-card:hover {
+  box-shadow: 
+    0 10px 25px rgba(var(--executive-navy), 0.1),
+    0 5px 10px rgba(var(--executive-navy), 0.08);
+  transform: translateY(-2px);
+}
+
+.executive-card-premium {
+  background: linear-gradient(
+    135deg,
+    rgb(var(--pearl-white)),
+    rgba(var(--rich-gold), 0.02)
+  );
+  border: 1px solid rgba(var(--rich-gold), 0.2);
+  border-radius: 6px;
+  box-shadow: 
+    0 4px 20px rgba(var(--rich-gold), 0.08),
+    0 1px 3px rgba(var(--executive-navy), 0.05);
+  position: relative;
+}
+
+.executive-card-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    rgb(var(--rich-gold)),
+    rgb(var(--muted-gold))
+  );
+  border-radius: 6px 6px 0 0;
+}
+
+/* ============================================
+   SOPHISTICATED TEXT EFFECTS
+   ============================================ */
+
+.text-gradient-gold {
+  background: linear-gradient(
+    135deg,
+    rgb(var(--rich-gold)),
+    rgb(var(--muted-gold))
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-navy {
+  background: linear-gradient(
+    135deg,
+    rgb(var(--executive-navy)),
+    rgb(var(--trust-blue))
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ============================================
+   PREMIUM FORM ELEMENTS
+   ============================================ */
+
+.executive-input {
+  background: rgb(var(--pearl-white));
+  border: 1px solid rgba(var(--executive-navy), 0.15);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: rgb(var(--executive-navy));
+  transition: all 0.2s ease;
+}
+
+.executive-input:focus {
+  outline: none;
+  border-color: rgb(var(--trust-blue));
+  box-shadow: 
+    0 0 0 3px rgba(var(--trust-blue), 0.1),
+    0 1px 2px rgba(var(--executive-navy), 0.05);
+}
+
+.executive-input::placeholder {
+  color: rgba(var(--warm-gray), 0.6);
+}
+
+/* ============================================
+   SUBTLE ANIMATIONS
+   ============================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   PROFESSIONAL HOVER STATES
+   ============================================ */
+
+.executive-link {
+  color: rgb(var(--trust-blue));
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.executive-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: rgb(var(--rich-gold));
+  transition: width 0.3s ease;
+}
+
+.executive-link:hover {
+  color: rgb(var(--executive-navy));
+}
+
+.executive-link:hover::after {
+  width: 100%;
+}
+
+/* ============================================
+   PREMIUM BADGES & CHIPS
+   ============================================ */
+
+.executive-badge {
+  background: rgba(var(--executive-navy), 0.05);
+  border: 1px solid rgba(var(--executive-navy), 0.1);
+  border-radius: 4px;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  color: rgb(var(--executive-navy));
+}
+
+.executive-badge-gold {
+  background: rgba(var(--rich-gold), 0.1);
+  border: 1px solid rgba(var(--rich-gold), 0.3);
+  color: rgb(var(--muted-gold));
+}
+
+/* ============================================
+   SCROLLBAR STYLING - Premium
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(var(--executive-navy), 0.02);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--executive-navy), 0.2);
+  border-radius: 2px;
+  border: 1px solid rgba(var(--executive-navy), 0.05);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--executive-navy), 0.3);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(var(--executive-navy), 0.2) rgba(var(--executive-navy), 0.02);
+}
+
+/* ============================================
+   LOADING & SKELETON STATES
+   ============================================ */
+
+.executive-skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(var(--executive-navy), 0.05) 0%,
+    rgba(var(--executive-navy), 0.02) 50%,
+    rgba(var(--executive-navy), 0.05) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.shadow-elegant-sm {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.shadow-elegant-md {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12);
+}
+
+.shadow-elegant-lg {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-premium {
+  box-shadow: 0 8px 32px rgba(var(--executive-navy), 0.12);
+}
+
+.border-premium {
+  border: 1px solid rgba(var(--executive-navy), 0.08);
+}
+
+.text-executive { color: rgb(var(--executive-navy)); }
+.text-trust { color: rgb(var(--trust-blue)); }
+.text-gold { color: rgb(var(--rich-gold)); }
+.text-pearl { color: rgb(var(--pearl-white)); }
+
+.bg-executive { background-color: rgb(var(--executive-navy)); }
+.bg-trust { background-color: rgb(var(--trust-blue)); }
+.bg-gold { background-color: rgb(var(--rich-gold)); }
+.bg-pearl { background-color: rgb(var(--pearl-white)); }
+
+/* ============================================
+   RESPONSIVE OPTIMIZATIONS
+   ============================================ */
+
+@media (max-width: 768px) {
+  h1, h2, h3 {
+    font-size: 90%;
+  }
+  
+  .executive-button-primary,
+  .executive-button-gold,
+  .executive-button-outline {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   HIGH CONTRAST ACCESSIBILITY
+   ============================================ */
+
+@media (prefers-contrast: high) {
+  .executive-glass {
+    background: rgba(var(--pearl-white), 0.98);
+    border: 2px solid rgb(var(--executive-navy));
+  }
+  
+  .executive-button-primary {
+    border: 2px solid rgb(var(--pearl-white));
+  }
+}
+
+/* ============================================
+   PREMIUM SECTION DIVIDERS
+   ============================================ */
+
+.divider-elegant {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--executive-navy), 0.1) 20%,
+    rgba(var(--executive-navy), 0.1) 80%,
+    transparent
+  );
+  margin: 3rem 0;
+}
+
+.divider-gold {
+  position: relative;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--rich-gold), 0.3) 20%,
+    rgba(var(--rich-gold), 0.3) 80%,
+    transparent
+  );
+  margin: 2rem 0;
+}
+
+/* ============================================
+   PROFESSIONAL TOOLTIPS
+   ============================================ */
+
+.tooltip-executive {
+  background: rgb(var(--executive-navy));
+  color: rgb(var(--pearl-white));
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  box-shadow: 0 4px 12px rgba(var(--executive-navy), 0.2);
+}
+
+/* ============================================
+   KEN BURNS EFFECT FOR HERO IMAGES
+   ============================================ */
+
+@keyframes kenburns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+.ken-burns {
+  animation: kenburns 20s ease-in-out infinite alternate;
+}
+
+/* ============================================
+   PREMIUM TRANSITIONS
+   ============================================ */
+
+.transition-premium {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.transition-smooth {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================================
+   DESCENDER-SAFE UTILITIES
+   ============================================ */
+
+@layer utilities {
+  /* Prevent descender clipping on gradient text in WebKit/Chromium */
+  .descender-safe {
+    display: inline-block;       /* makes vertical padding effective */
+    line-height: 1.25;          /* floor for large headings */
+    padding-bottom: 0.06em;     /* expands content box for glyph tails */
+    overflow: visible;          /* belt-and-suspenders */
+  }
+  
+  /* Update gradient utilities to prevent clipping */
+  .text-gradient-gold,
+  .text-gradient-navy {
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    overflow: visible;
+  }
+  
+  /* Fluid typography scales */
+  .text-fluid-h1 {
+    font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
+    line-height: 1.25;
+  }
+  
+  .text-fluid-h2 {
+    font-size: clamp(2rem, 4vw + 0.5rem, 3rem);
+    line-height: 1.375;
+  }
+  
+  .text-fluid-h3 {
+    font-size: clamp(1.5rem, 3vw + 0.25rem, 2rem);
+    line-height: 1.375;
+  }
+  
+  .text-fluid-lead {
+    font-size: clamp(1.125rem, 2vw + 0.25rem, 1.25rem);
+    line-height: 1.7;
+  }
+}
+
+/* ============================================
+   CASE STUDIES - POSTER DESIGN SYSTEM
+   ============================================ */
+
+/* Page transition animation for case studies */
+.cs-page-transition {
+  animation: subtle-fade-up 0.4s ease-out;
+}
+
+/* Poster card hover states */
+.cs-poster-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hero metric typography */
+.cs-hero-metric {
+  background: linear-gradient(
+    135deg,
+    rgb(var(--executive-navy)),
+    rgb(var(--trust-blue))
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  overflow: visible;
+}
+
+/* Category accent colors */
+.border-l-blue-600 { border-left-color: rgb(37, 99, 235); }
+.border-l-emerald-600 { border-left-color: rgb(5, 150, 105); }
+.border-l-purple-600 { border-left-color: rgb(147, 51, 234); }
+.border-l-amber-600 { border-left-color: rgb(217, 119, 6); }
+.border-l-slate-600 { border-left-color: rgb(71, 85, 105); }
+
+/* Smooth hover reveal animation */
+.cs-hover-reveal {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced prose for case study details */
+.cs-prose-enhanced {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: rgb(var(--slate-dark));
+}
+
+.cs-prose-enhanced h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.cs-prose-enhanced ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.cs-prose-enhanced li {
+  margin-bottom: 0.75rem;
+}
+
+/* KPI tiles with gradient text */
+.cs-kpi-tile {
+  transition: all 0.2s ease;
+}
+
+.cs-kpi-tile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}

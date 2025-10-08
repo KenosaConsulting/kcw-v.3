@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kenosa Consulting</title>
+    
+    <!-- Performance Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://picsum.photos">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --background: 215 28% 9%;
+        --foreground: 210 40% 98%;
+        --card: 215 28% 17%;
+        --card-foreground: 210 40% 98%;
+        --popover: 215 28% 9%;
+        --popover-foreground: 210 40% 98%;
+        --primary: 214 100% 59%;
+        --primary-foreground: 210 40% 98%;
+        --secondary: 215 20% 25%;
+        --secondary-foreground: 210 40% 98%;
+        --muted: 215 20% 25%;
+        --muted-foreground: 215 20% 65%; /* Contrast Enhanced */
+        --accent: 215 20% 25%;
+        --accent-foreground: 210 40% 98%;
+        --destructive: 0 63% 31%;
+        --destructive-foreground: 210 40% 98%;
+        --border: 215 20% 25%;
+        --input: 215 20% 25%;
+        --ring: 214 100% 59%;
+        --radius: 0.5rem;
+
+        /* Custom Navy colors */
+        --navy-deep: 215 28% 9%;
+        --navy-primary: 215 28% 17%;
+        --navy-light: 215 20% 25%;
+        
+        /* Custom Accent blues */
+        --accent-blue: 214 100% 59%;
+        --accent-blue-light: 214 100% 70%; /* Contrast Verified */
+        --accent-blue-dark: 214 100% 45%;
+      }
+
+      body {
+        font-family: 'Space Grotesk', sans-serif;
+        background-color: hsl(var(--background));
+        color: hsl(var(--foreground));
+      }
+      
+      /* Base transitions for smoother interactions */
+      a, button, input, textarea {
+        transition: all 0.2s ease-in-out;
+      }
+      
+      /* Accessible focus styles for form elements */
+      input:focus-visible, textarea:focus-visible {
+        outline: 2px solid hsl(var(--ring));
+        outline-offset: 2px;
+        border-color: hsl(var(--ring));
+      }
+
+      @keyframes fade-in-up {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+      }
+      
+      .animate-fade-in-up {
+        animation: fade-in-up 0.6s ease-out forwards;
+      }
+
+      .stagger-animate > * {
+        opacity: 0;
+        animation: fade-in-up 0.6s ease-out forwards;
+      }
+
+      /* Glassmorphic styles */
+      .glassmorphic-nav {
+        background: rgba(17, 24, 39, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .glassmorphic-nav.scrolled {
+        background: rgba(17, 24, 39, 0.95);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2);
+      }
+      
+      .glassmorphic-card {
+        background: rgba(17, 24, 39, 0.6);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(59, 130, 246, 0.1);
+      }
+      
+      /* Performance optimizations */
+      .will-change-transform {
+        will-change: transform;
+      }
+      
+      .will-change-opacity {
+        will-change: opacity;
+      }
+      
+      /* Reduced motion support */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+
+    </style>
+     <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              border: "hsl(var(--border))",
+              input: "hsl(var(--input))",
+              ring: "hsl(var(--ring))",
+              background: "hsl(var(--background))",
+              foreground: "hsl(var(--foreground))",
+              primary: {
+                DEFAULT: "hsl(var(--primary))",
+                foreground: "hsl(var(--primary-foreground))",
+              },
+              secondary: {
+                DEFAULT: "hsl(var(--secondary))",
+                foreground: "hsl(var(--secondary-foreground))",
+              },
+              destructive: {
+                DEFAULT: "hsl(var(--destructive))",
+                foreground: "hsl(var(--destructive-foreground))",
+              },
+              muted: {
+                DEFAULT: "hsl(var(--muted))",
+                foreground: "hsl(var(--muted-foreground))",
+              },
+              accent: {
+                DEFAULT: "hsl(var(--accent))",
+                foreground: "hsl(var(--accent-foreground))",
+              },
+              popover: {
+                DEFAULT: "hsl(var(--popover))",
+                foreground: "hsl(var(--popover-foreground))",
+              },
+              card: {
+                DEFAULT: "hsl(var(--card))",
+                foreground: "hsl(var(--card-foreground))",
+              },
+              'navy-deep': 'hsl(var(--navy-deep))',
+              'navy-primary': 'hsl(var(--navy-primary))',
+              'navy-light': 'hsl(var(--navy-light))',
+              'accent-blue': {
+                DEFAULT: 'hsl(var(--accent-blue))',
+                light: 'hsl(var(--accent-blue-light))',
+                dark: 'hsl(var(--accent-blue-dark))',
+              },
+            },
+            borderRadius: {
+              lg: `var(--radius)`,
+              md: `calc(var(--radius) - 2px)`,
+              sm: "calc(var(--radius) - 4px)",
+            },
+            keyframes: {
+              "accordion-down": {
+                from: { height: "0" },
+                to: { height: "var(--radix-accordion-content-height)" },
+              },
+              "accordion-up": {
+                from: { height: "var(--radix-accordion-content-height)" },
+                to: { height: "0" },
+              },
+            },
+            animation: {
+              "accordion-down": "accordion-down 0.2s ease-out",
+              "accordion-up": "accordion-up 0.2s ease-out",
+            },
+            fontFamily: {
+              sans: ['Space Grotesk', 'system-ui', '-apple-system', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "clsx": "https://aistudiocdn.com/clsx@^2.1.1",
+    "tailwind-merge": "https://aistudiocdn.com/tailwind-merge@^3.3.1",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+/* Case Studies CSS Utilities - Poster Design System */
+/* Import this in your global CSS once: @import "./styles/case-studies.css"; */
+
+@layer components {
+  /* Core section utilities */
+  .cs-section { 
+    @apply py-16 md:py-20 lg:py-24; 
+  }
+  
+  /* Poster-style card system */
+  .cs-poster-card {
+    @apply relative block bg-white rounded-sm border border-slate-200 
+           p-10 md:p-12 lg:p-14
+           hover:shadow-xl transition-all duration-300 ease-out
+           hover:translate-y-[-2px];
+  }
+  
+  /* Typography scales for poster design */
+  .cs-hero-metric {
+    @apply text-6xl md:text-7xl lg:text-8xl font-bold 
+           tracking-[-0.04em] leading-[0.85]
+           bg-gradient-to-br from-slate-900 to-slate-700 
+           bg-clip-text text-transparent;
+  }
+  
+  .cs-headline-poster {
+    @apply font-serif text-2xl md:text-3xl lg:text-4xl font-bold 
+           tracking-[-0.02em] leading-[1.1];
+  }
+  
+  .cs-payoff-serif {
+    @apply font-serif text-lg md:text-xl text-slate-600 
+           leading-relaxed italic;
+  }
+  
+  /* Subtle animations */
+  @keyframes subtle-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .cs-fade-up {
+    animation: subtle-fade-up 0.6s ease-out;
+  }
+  
+  /* Swiss grid alignment helpers */
+  .cs-swiss-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+  }
+  
+  .cs-swiss-span-6 {
+    grid-column: span 6;
+  }
+  
+  .cs-swiss-span-4 {
+    grid-column: span 4;
+  }
+  
+  /* Enhanced hover states */
+  .cs-poster-card:hover .cs-hover-reveal {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  .cs-hover-reveal {
+    @apply opacity-0 translate-y-2 transition-all duration-300;
+  }
+  
+  /* Category accent system */
+  .cs-category-tech {
+    @apply border-l-blue-600;
+  }
+  
+  .cs-category-market {
+    @apply border-l-emerald-600;
+  }
+  
+  .cs-category-gtm {
+    @apply border-l-purple-600;
+  }
+  
+  .cs-category-competitive {
+    @apply border-l-amber-600;
+  }
+  
+  /* Minimalist CTA styles */
+  .cs-cta-minimal {
+    @apply inline-flex items-center justify-center px-8 py-4 
+           text-lg font-semibold bg-slate-900 text-white rounded-sm
+           hover:bg-slate-800 transition-colors duration-200;
+  }
+  
+  .cs-arrow-icon {
+    @apply transition-all duration-300 opacity-40 
+           group-hover:translate-x-1 group-hover:opacity-100;
+  }
+  
+  /* Detail page enhancements */
+  .cs-prose-enhanced {
+    @apply prose prose-slate prose-lg max-w-none
+           prose-headings:font-serif prose-headings:tracking-tight
+           prose-p:leading-relaxed prose-p:text-slate-700
+           prose-li:text-slate-700 prose-strong:text-slate-900;
+  }
+  
+  /* KPI tile refinements for detail pages */
+  .cs-kpi-minimal {
+    @apply rounded-sm border border-slate-200 p-6 bg-white
+           hover:shadow-md transition-shadow duration-200;
+  }
+  
+  /* Responsive typography scale */
+  @media (min-width: 1536px) {
+    .cs-hero-metric {
+      @apply text-8xl lg:text-9xl;
+    }
+    
+    .cs-headline-poster {
+      @apply text-3xl md:text-4xl lg:text-5xl;
+    }
+  }
+  
+  /* Print styles for case studies */
+  @media print {
+    .cs-poster-card {
+      @apply border-gray-300 shadow-none;
+      page-break-inside: avoid;
+    }
+    
+    .cs-hero-metric {
+      @apply text-black;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+}
+
+/* Custom utility for perfect vertical rhythm */
+:root {
+  --cs-baseline: 1.6rem;
+}
+
+.cs-vertical-rhythm > * + * {
+  margin-top: var(--cs-baseline);
+}
+
+/* Smooth scroll behavior for in-page navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Add subtle page transitions */
+.cs-page-transition {
+  animation: subtle-fade-up 0.4s ease-out;
+}
