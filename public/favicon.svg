@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background -->
+  <rect width="100" height="100" fill="#F8F6F3"/>
+  
+  <!-- Kenosa K Logo - Navy sections forming the K through negative space -->
+  <g>
+    <!-- Top left triangle -->
+    <path d="M 0 0 L 40 0 L 0 40 Z" fill="#0A1628"/>
+    <!-- Top right rectangle -->
+    <path d="M 50 0 L 100 0 L 100 45 L 50 45 Z" fill="#0A1628"/>
+    <!-- Bottom left rectangle -->
+    <path d="M 0 50 L 0 100 L 45 100 L 45 50 Z" fill="#0A1628"/>
+    <!-- Bottom right triangle -->
+    <path d="M 55 55 L 100 55 L 100 100 L 55 100 Z" fill="#0A1628"/>
+  </g>
+</svg>
