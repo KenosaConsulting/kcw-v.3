@@ -256,8 +256,8 @@ const HomePage: React.FC = () => {
             text-lg tracking-tight text-[rgb(107,114,128)] 
             md:text-xl max-w-3xl mx-auto leading-[1.8]"
           >
-            Kenosa delivers strategic intelligence to help you navigate uncertainty and seize opportunity. 
-            We turn data into decisive action.
+            Kenosa helps businesses accelerate growth and outperform competitors. 
+            We deliver market research, strategic planning, and operational systems that work.
           </p>
 
           {/* CTA */}
